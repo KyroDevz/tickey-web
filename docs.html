@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tickey Docs</title>
+  <link rel="icon" href="../icons/favicon.ico" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      color: #1f1f1f;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header.site-header {
+      width: 100%;
+      padding: 1rem 2rem;
+      background-color: #ffffff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #2b2b2b;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #666;
+      margin-left: 1.5rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #000;
+    }
+
+    .docs-wrapper {
+      display: flex;
+      flex: 1;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #ffffff;
+      padding: 2rem 1.5rem;
+      border-right: 1px solid #eee;
+      min-height: 100%;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+    }
+
+    .sidebar h2 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: #999;
+    }
+
+    .sidebar a {
+      display: block;
+      margin: 0.5rem 0;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .sidebar a:hover {
+      color: #5865F2;
+    }
+
+    .content {
+      flex: 1;
+      padding: 2rem;
+    }
+
+    .content h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #2b2b2b;
+    }
+
+    .content h2 {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      color: #444;
+    }
+
+    .content p {
+      margin-bottom: 1rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    pre {
+      background: #1e1e1e;
+      color: #eee;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    code {
+      font-family: monospace;
+    }
+
+    footer.site-footer {
+      background-color: #ffffff;
+      border-top: 1px solid #eee;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    .footer-links {
+      margin-top: 0.5rem;
+    }
+
+    .footer-links a {
+      margin: 0 0.5rem;
+      text-decoration: none;
+      color: #666;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #000;
+    }
+
+    @media (max-width: 768px) {
+      .docs-wrapper {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+      }
+
+      .content {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo-text">Tickey</div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="docs.html">Docs</a>
+      <a href="https://discord.gg/Vnq9vubbQs">Support</a>
+    </nav>
+  </header>
+
+  <!-- Docs Layout -->
+  <div class="docs-wrapper">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Documentation</h2>
+      <a href="#getting-started">Getting Started</a>
+      <a href="#setup">Bot Setup</a>
+      <a href="#commands">Commands</a>
+      <a href="#permissions">Permissions</a>
+      <a href="#faq">FAQ</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+      <h1>Tickey Documentation</h1>
+      <p>Welcome to the official Tickey docs! Here you'll find everything you need to set up and use your ticket system.</p>
+
+      <h2 id="getting-started">Getting Started</h2>
+      <p>To get started with Tickey, invite the bot to your server and ensure it has proper permissions.</p>
+      <pre><code>https://discord.gg/YOUR_INVITE_HERE</code></pre>
+
+      <h2 id="setup">Bot Setup</h2>
+      <p>Use the following command to initialize Tickey in your server:</p>
+      <pre><code>/setup</code></pre>
+
+      <h2 id="commands">Commands</h2>
+      <p>Tickey supports the following slash commands:</p>
+      <ul>
+        <li><code>/ticket open</code> – Opens a new support ticket</li>
+        <li><code>/ticket close</code> – Closes the current ticket</li>
+        <li><code>/ticket add</code> – Adds a user to the ticket</li>
+      </ul>
+
+      <h2 id="permissions">Permissions</h2>
+      <p>Make sure the bot has <code>Manage Channels</code>, <code>Send Messages</code>, and <code>Manage Roles</code> permissions.</p>
+
+      <h2 id="faq">FAQ</h2>
+      <p><strong>Q: Does Tickey support logging?</strong><br>A: Yes! Use <code>/logs</code> to configure your log channel.</p>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    &copy; 2025 Tickey. All rights reserved.
+    <div class="footer-links">
+      <a href="./privacy-policy.html">Privacy</a> |
+      <a href="./terms.html">Terms</a> |
+      <a href="#">Contact</a>
+    </div>
+  </footer>
+</body>
+</html>

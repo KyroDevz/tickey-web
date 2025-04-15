@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tickey – Coming Soon</title>
+  <link rel="icon" href="./icons/favicon.ico" type="image/x-icon">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f7f9fc;
+      color: #1f1f1f;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header.site-header {
+      width: 100%;
+      padding: 1rem 2rem;
+      background-color: #ffffff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #2b2b2b;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #666;
+      margin-left: 1.5rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #000;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+      margin: 2rem auto;
+      text-align: center;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      color: #2b2b2b;
+      margin-top: 2rem;
+    }
+
+    .tagline {
+      font-size: 1.25rem;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 3rem 0;
+      flex-wrap: wrap;
+    }
+
+    .countdown div {
+      background: #ffffff;
+      border: 1px solid #ddd;
+      padding: 1rem;
+      border-radius: 12px;
+      width: 100px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .countdown span {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .label {
+      font-size: 0.85rem;
+      color: #888;
+    }
+
+    p {
+      color: #666;
+      font-size: 1rem;
+    }
+
+    .launch-message {
+      display: none;
+      font-size: 1.5rem;
+      color: #2b2b2b;
+      margin-top: 2rem;
+      font-weight: 600;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+    }
+
+    .invite-button {
+      margin-top: 2rem;
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: #5865F2;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .invite-button:hover {
+      background-color: #4752c4;
+    }
+
+    footer.site-footer {
+      background-color: #ffffff;
+      border-top: 1px solid #eee;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    .footer-links {
+      margin-top: 0.5rem;
+    }
+
+    .footer-links a {
+      margin: 0 0.5rem;
+      text-decoration: none;
+      color: #666;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #000;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.25rem;
+      }
+
+      .countdown {
+        gap: 1rem;
+      }
+
+      .countdown div {
+        width: 80px;
+        padding: 0.75rem;
+      }
+
+      header.site-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 0.5rem;
+      }
+    }
+
+    .logo-text {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2b2b2b;
+}
+
+.logo-text .logo-icon {
+  height: 28px;
+  width: 28px;
+  margin-right: 0.5rem;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo-text">
+        <img src="./icons/favicon.ico" alt="Tickey Logo" class="logo-icon">
+        Tickey
+      </div>
+      
+    <nav>
+      <a href="./index.html">Home</a>
+      <a href="./pages/docs.html">Docs</a>
+      <a href="https://discord.gg/Vnq9vubbQs">Support</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1>Tickey</h1>
+    <div class="tagline">Your Ticket Manager, Reinvented.</div>
+
+    <div class="countdown" id="countdown">
+      <div>
+        <span id="days">00</span>
+        <div class="label">Days</div>
+      </div>
+      <div>
+        <span id="hours">00</span>
+        <div class="label">Hours</div>
+      </div>
+      <div>
+        <span id="minutes">00</span>
+        <div class="label">Minutes</div>
+      </div>
+      <div>
+        <span id="seconds">00</span>
+        <div class="label">Seconds</div>
+      </div>
+    </div>
+
+    <p>We're working hard to launch Tickey. In the meantime, join our Discord below!</p>
+
+    <div class="launch-message" id="launchMessage">🎉 Tickey is now live!</div>
+
+    <a href="https://discord.gg/Vnq9vubbQs" class="invite-button" target="_blank">Join our Discord</a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    &copy; 2025 Tickey. All rights reserved.
+    <div class="footer-links">
+      <a href="./pages/privacy-policy.html">Privacy</a> |
+      <a href="./pages/terms.html">Terms</a> |
+      <a href="#">Contact</a>
+    </div>
+  </footer>
+
+  <!-- Countdown Script -->
+  <script>
+    const countdown = () => {
+      const launchDate = new Date("April 21, 2025 12:00:00").getTime();
+      const now = new Date().getTime();
+      const gap = launchDate - now;
+
+      if (gap <= 0) {
+        document.getElementById("countdown").style.display = "none";
+        document.getElementById("launchMessage").style.display = "block";
+        document.body.style.background = "#e8f5e9";
+        return;
+      }
+
+      const second = 1000;
+      const minute = second * 60;
+      const hour = minute * 60;
+      const day = hour * 24;
+
+      const d = Math.floor(gap / day);
+      const h = Math.floor((gap % day) / hour);
+      const m = Math.floor((gap % hour) / minute);
+      const s = Math.floor((gap % minute) / second);
+
+      document.getElementById('days').innerText = d.toString().padStart(2, '0');
+      document.getElementById('hours').innerText = h.toString().padStart(2, '0');
+      document.getElementById('minutes').innerText = m.toString().padStart(2, '0');
+      document.getElementById('seconds').innerText = s.toString().padStart(2, '0');
+    };
+
+    setInterval(countdown, 1000);
+    countdown();
+  </script>
+</body>
+</html>
